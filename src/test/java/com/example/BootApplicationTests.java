@@ -30,4 +30,18 @@ class BootApplicationTests {
             System.out.println(user);
         }
     }
+//    乐观锁测试
+    @Test
+    public void test3(){
+        User user=new User();
+        user.setId(3);
+        user.setName("王五");
+        user.setVersion(1);
+        int i = userDao.update(user, null);
+        if (i>0){
+            System.out.println("修改成功");
+        }else {
+            System.out.println("修改失败");
+        }
+    }
 }
