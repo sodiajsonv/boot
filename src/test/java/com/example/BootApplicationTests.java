@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.dao.UserDao;
-import com.example.domain.User;
+import com.example.entity.User;
 import com.example.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +36,8 @@ class BootApplicationTests {
         User user=new User();
         user.setId(3);
         user.setName("王五");
-        user.setVersion(1);
-        int i = userDao.update(user, null);
+        user.setVersion(2);
+        int i = userDao.updateById(user);
         if (i>0){
             System.out.println("修改成功");
         }else {
